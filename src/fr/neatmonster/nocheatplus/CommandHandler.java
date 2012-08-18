@@ -172,7 +172,8 @@ public class CommandHandler implements CommandExecutor {
                 && sender.hasPermission(Permissions.ADMINISTRATION_RELOAD))
             // Reload command was used.
             handleReloadCommand(sender);
-        else if (protectPlugins)
+        else if (protectPlugins && !sender.hasPermission(Permissions.ADMINISTRATION_INFO)
+                && !sender.hasPermission(Permissions.ADMINISTRATION_RELOAD))
             sender.sendMessage("Unknown command. Type \"help\" for help.");
         else
             return false;
