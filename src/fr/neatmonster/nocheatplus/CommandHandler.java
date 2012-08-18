@@ -164,11 +164,11 @@ public class CommandHandler implements CommandExecutor {
 
         final boolean protectPlugins = ConfigManager.getConfigFile().getBoolean(ConfPaths.MISCELLANEOUS_PROTECTPLUGINS);
 
-        if (args[0].equalsIgnoreCase("info") && args.length == 2
+        if (args.length == 2 && args[0].equalsIgnoreCase("info")
                 && sender.hasPermission(Permissions.ADMINISTRATION_INFO))
             // Info command was used.
             handleInfoCommand(sender, args[1]);
-        else if (args[0].equalsIgnoreCase("reload") && args.length == 1
+        else if (args.length == 1 && args[0].equalsIgnoreCase("reload")
                 && sender.hasPermission(Permissions.ADMINISTRATION_RELOAD))
             // Reload command was used.
             handleReloadCommand(sender);
